@@ -6,7 +6,7 @@ import 'package:my_flutter_mall/model/home_mode.dart';
 
 import '../home_logic.dart';
 
-/// @class: ClassificationWidget
+/// @class: CategoryWidget
 /// @author: hp
 /// @updateTime: 2021/12/7 14:15
 /// @description: 首页渠道视图
@@ -40,6 +40,7 @@ class _buildGridViewItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 18),
       child: Column(
+        mainAxisAlignment:MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CachedNetworkImage(

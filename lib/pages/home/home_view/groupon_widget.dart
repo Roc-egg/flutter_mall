@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:decimal/decimal.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_flutter_mall/common/res/colors.dart';
 import 'package:my_flutter_mall/common/utils/toast_util.dart';
 import 'package:my_flutter_mall/model/home_mode.dart';
 
@@ -87,7 +87,7 @@ class _GrouponItemWidget extends StatelessWidget {
                           style: Theme.of(context).textTheme.caption?.copyWith(decoration: TextDecoration.lineThrough, fontSize: 14)),
                       SizedBox(width: 5),
                       Text('groupPurchasePrice'.trArgs([Decimal.parse(grouponList.grouponPrice.toString()).toString()]),
-                          style: Theme.of(context).textTheme.caption?.copyWith(color: Colors.orange[700], fontSize: 14)),
+                          style: Theme.of(context).textTheme.caption?.copyWith(color: ColorStyle.color_orange_700, fontSize: 14)),
                     ],
                   )
                 ],

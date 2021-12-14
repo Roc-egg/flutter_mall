@@ -33,7 +33,7 @@ class MainLogic extends GetxController {
     ///初始化数据
     tabTitles = [
       'homeHome'.tr,
-      'homeClassification'.tr,
+      'homeCategory'.tr,
       'homeShoppingCart'.tr,
       'homeMy'.tr
     ];

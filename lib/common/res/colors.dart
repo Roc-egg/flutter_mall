@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// @class : ColorStyle
@@ -9,7 +8,5 @@ class ColorStyle {
   static const color_B8C0D4 = Color(0xFFEEEEEE);
 
   /// 金额文字颜色
-  static const goldColor = Color.fromARGB(255, 255, 215, 0);
-
-
+  static Color? color_orange_700 = Colors.orange[700];
 }

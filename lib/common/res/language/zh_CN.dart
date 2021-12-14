@@ -2,7 +2,7 @@ const Map<String, String> zh_CN = {
   'appName': '财旺海味',
   'loading': '加载中...',
   'homeHome': '首页',
-  'homeClassification': '分类',
+  'homeCategory': '分类',
   'homeShoppingCart': '购物车',
   'homeMy': '个人',
   'autoBySystem': '跟随系统',
@@ -44,6 +44,7 @@ const Map<String, String> zh_CN = {
   'groupPurchasePrice': '团购价: ¥%s',
   'yuanQi': '%s元起',
   'moreGoods': '更多%s好物>',
+  'goodsCategory': '%s分类',
 
   //版本更新
   'appUpdateCheckUpdate': '检查更新',

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:my_flutter_mall/common/widgets/app.dart';
-import 'package:my_flutter_mall/pages/classification/classification_view.dart';
+import 'package:my_flutter_mall/pages/category/category_view.dart';
 import 'package:my_flutter_mall/pages/home/home_view.dart';
 import 'package:my_flutter_mall/pages/my/my_view.dart';
 import 'package:my_flutter_mall/pages/shopping_cart/shopping_cart_view.dart';
-
-import '../../global.dart';
 
 import 'main_logic.dart';
 import 'main_state.dart';
@@ -52,28 +49,13 @@ class MainPage extends StatelessWidget with WidgetsBindingObserver {
     );
   }
 
-  ///顶部导航栏
-  AppBar _buildAppBar(MainLogic logic, MainState state) {
-    return transparentAppBar(
-        title: Obx(() => Text(
-              logic.tabTitles[state.page],
-            )),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-              ))
-        ]);
-  }
-
   /// 内容页
   Widget _buildPageView(MainLogic logic, MainState state) {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
         HomePage(),
-        ClassificationPage(),
+        CategoryPage(),
         ShoppingCartPage(),
         MyPage(),
       ],

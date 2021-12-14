@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -55,43 +57,60 @@ class MyApp extends StatelessWidget {
           // 可以通过惯性滑动触发加载更多
           enableBallisticLoad: true,
           footerTriggerDistance: 150,
-          child: GetMaterialApp(
-            debugShowCheckedModeBanner: true,
-            initialRoute: Routes.splashPage,
-            getPages: Routes.routePage,
-            builder: EasyLoading.init(
-                builder: (context, child) => Scaffold(
-                      // Global GestureDetector that will dismiss the keyboard
-                      body: GestureDetector(
-                        onTap: () {
-                          KeyboardUtils.hideKeyboard(context);
-                        },
-                        child: child,
-                      ),
-                    )),
+          child:
+          // ColorFiltered(//灰色app 可以通过服务器下发参数设置为Colors.grey 或者 Colors.transparent
+          //   colorFilter: ColorFilter.mode(Colors.grey, BlendMode.color),
+          //   child:
+            GetMaterialApp(
+              /// 解决在web端有滑动时，鼠标无法上下左右拖动问题
+              scrollBehavior: MyCustomScrollBehavior(),
+              debugShowCheckedModeBanner: true,
+              initialRoute: Routes.splashPage,
+              getPages: Routes.routePage,
+              builder: EasyLoading.init(
+                  builder: (context, child) => Scaffold(
+                    // Global GestureDetector that will dismiss the keyboard
+                    body: GestureDetector(
+                      onTap: () {
+                        KeyboardUtils.hideKeyboard(context);
+                      },
+                      child: child,
+                    ),
+                  )),
 
-            ///主题样式
-            theme: AppTheme.to.themeData(),
+              ///主题样式
+              theme: AppTheme.to.themeData(),
 
-            ///黑暗主题样式
-            darkTheme: AppTheme.to.themeData(),
+              ///黑暗主题样式
+              darkTheme: AppTheme.to.themeData(),
 
-            ///目前看来必须设置，不设置会出现系统暗黑模式下，切换主题错乱问题
-            themeMode: ThemeMode.light,
+              ///目前看来必须设置，不设置会出现系统暗黑模式下，切换主题错乱问题
+              themeMode: ThemeMode.light,
 
-            ///国际化支持-来源配置
-            translations: TranslationService(),
+              ///国际化支持-来源配置
+              translations: TranslationService(),
 
-            ///国际化支持-默认语言
-            locale: TranslationService.locale,
+              ///国际化支持-默认语言
+              locale: TranslationService.locale,
 
-            ///国际化支持-备用语言
-            fallbackLocale: TranslationService.fallbackLocale,
+              ///国际化支持-备用语言
+              fallbackLocale: TranslationService.fallbackLocale,
 
-            defaultTransition: Transition.fade,
-          ),
+              defaultTransition: Transition.fade,
+            ),
+          // )
+
         ),
       ),
     );
   }
+}
+
+/// 解决在web端有滑动时，鼠标无法上下左右拖动问题
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }

@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:decimal/decimal.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_flutter_mall/common/res/colors.dart';
@@ -88,7 +87,7 @@ class _GridViewItem extends StatelessWidget {
               CachedNetworkImage(imageUrl: goodsList.picUrl ?? ''),
               Text(goodsList.name ?? '', style: Theme.of(context).textTheme.subtitle2, softWrap: true, overflow: TextOverflow.ellipsis),
               SizedBox(height: 5),
-              Text("¥ ${Decimal.parse(goodsList.retailPrice.toString())}", style: TextStyle(fontSize: 15, color: ColorStyle.goldColor)),
+              Text("¥ ${Decimal.parse(goodsList.retailPrice.toString())}", style: TextStyle(fontSize: 15, color: ColorStyle.color_orange_700)),
             ],
           ),
           onTap: () => {ToastUtils.show("点击了${goodsList.name}")},

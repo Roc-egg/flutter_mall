@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// 通用透明背景 AppBar
-AppBar transparentAppBar({
+/// 通用AppBar
+AppBar MyAppBar({
   Widget? title,
   Widget? leading,
   List<Widget>? actions,
@@ -13,6 +13,7 @@ AppBar transparentAppBar({
             child: title,
           )
         : null,
+    centerTitle: true,
     leading: leading,
     actions: actions,
     backgroundColor: backgroundColor,

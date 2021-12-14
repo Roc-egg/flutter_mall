@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:decimal/decimal.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_flutter_mall/common/res/colors.dart';
 import 'package:my_flutter_mall/common/utils/toast_util.dart';
 import 'package:my_flutter_mall/model/home_mode.dart';
 
@@ -20,7 +20,7 @@ class NewGoodsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio:0.8),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.8),
         delegate: SliverChildBuilderDelegate((content, index) {
           return InkWell(
             onTap: () {
@@ -46,7 +46,8 @@ class _NewGoodsItemWidget extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         Text(newGoodsList.name ?? '', style: TextStyle(fontSize: 14)),
-        Text("¥${Decimal.parse(newGoodsList.retailPrice.toString())}", style: TextStyle(fontSize: 14,color: Colors.orange[700])),
+        SizedBox(height: 5),
+        Text("¥${Decimal.parse(newGoodsList.retailPrice.toString())}", style: TextStyle(fontSize: 14, color: ColorStyle.color_orange_700)),
       ],
     );
   }

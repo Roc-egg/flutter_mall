@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:decimal/decimal.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_flutter_mall/common/res/colors.dart';
 import 'package:my_flutter_mall/common/utils/toast_util.dart';
 import 'package:my_flutter_mall/model/home_mode.dart';
 
@@ -65,7 +65,7 @@ class _HotGoodsItemWidget extends StatelessWidget {
                   SizedBox(height: 5),
                   Text(hotGoodsList.brief ?? "",style: Theme.of(context).textTheme.caption),
                   SizedBox(height: 5),
-                  Text("¥${Decimal.parse(hotGoodsList.retailPrice.toString())}",style: Theme.of(context).textTheme.subtitle2?.copyWith(color: Colors.orange[700]))
+                  Text("¥${Decimal.parse(hotGoodsList.retailPrice.toString())}",style: Theme.of(context).textTheme.subtitle2?.copyWith(color: ColorStyle.color_orange_700))
                 ],
               ),
             ),
